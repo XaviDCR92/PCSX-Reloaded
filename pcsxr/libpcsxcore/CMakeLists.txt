@@ -84,6 +84,7 @@ set(SRCS  psxbios.c
           cdriso.c
           cheat.c
           socket.c
+          gdb_server.c
           ppf.c)
 
 set(LIBS "-lm")

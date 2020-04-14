@@ -32,6 +32,7 @@
 #include <dirent.h>
 #include <sys/stat.h>
 #include "../libpcsxcore/sio.h"
+#include "../libpcsxcore/gdb_server.h"
 
 #include "Linux.h"
 #include "ConfDlg.h"
@@ -442,7 +443,7 @@ int main(int argc, char *argv[]) {
 				}
 			}
 		}
-		
+
 		if (loadst==0) {
 			loadst = UpdateMenuSlots() + 1;
 		}
@@ -492,6 +493,8 @@ int SysInit() {
 	if (Config.Debug) {
 		StartDebugger();
 	}
+
+	gdb_server_init();
 
 	return 0;
 }

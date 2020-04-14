@@ -22,6 +22,7 @@
  */
 
 #include "psxcounters.h"
+#include "gdb_server.h"
 
 /******************************************************************************/
 
@@ -323,6 +324,7 @@ void psxRcntUpdate()
         }
     }
 
+    gdb_server_update();
     DebugVSync();
 }
 
